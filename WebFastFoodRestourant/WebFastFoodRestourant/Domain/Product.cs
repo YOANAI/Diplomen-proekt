@@ -13,9 +13,9 @@ namespace WebFastFoodRestaurantApp.Domain
         [Required]
         [MaxLength(30)]
         public string ProductName { get; set; }
-        [Required]
-        public int BrandId { get; set; }
-
+        
+        public string Description { get; set; }
+        public int TypeId { get; set; }
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
         public string Picture { get; set; }
@@ -23,8 +23,11 @@ namespace WebFastFoodRestaurantApp.Domain
         [Range(0, 5000)]
         public int Quantity { get; set; }
         [Required]
+        [Range(0,1000)]
         public decimal Price { get; set; }
+        [Range(0, 100)]
         public decimal Discount { get; set; }
+        public virtual Type Type { get; set; }
         public virtual IEnumerable<Order> Orders { get; set; } = new List<Order>();
     }
 }

@@ -7,7 +7,7 @@ using WebFastFoodRestaurantApp.Domain;
 
 namespace WebFastFoodRestourant.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -16,6 +16,8 @@ namespace WebFastFoodRestourant.Data
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Order> PrOrdersoducts { get; set; }
+        public DbSet<Type> Types { get; set; }
+        public DbSet<Order> Orders { get; set; }
+
     }
 }
